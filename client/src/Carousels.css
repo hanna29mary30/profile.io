@@ -1,0 +1,31 @@
+.carousels {
+    
+    position: relative;
+  }
+  
+  .profile-image {
+    
+    position: absolute;
+    left: 200px;
+    top: 100px; 
+    border-radius: 115px; 
+    width: 200px; 
+    height: 200px;
+    box-shadow: 5px 5px 10px rgb(255, 255, 255); 
+    z-index: 2; 
+  }
+  .heading1{
+    position: absolute;
+    right: 275px;
+    top: 200px; 
+    box-shadow: 5px 5px 10px rgb(251, 249, 249); 
+    z-index: 2;
+  }
+  .heading2{
+    position: absolute;
+    right: 275px;
+    top: 275px; 
+    box-shadow: 5px 5px 10px rgb(247, 244, 244); 
+    z-index: 2;
+  }
+  
