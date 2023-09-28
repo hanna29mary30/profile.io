@@ -21,4 +21,16 @@ export const getTodos = async () => {
     return await axios.get(`${URL}/todos`);
   };
 
+export const updateTodoCompletion = async (id, updatedtodo ) => {
+    return await axios.put(`${URL}/${id}`, updatedtodo);
+  };
+
+export const remdone = async (id) => {
+  return await axios.delete(`${URL}/${id}`);
+};
+
+export const remall = async () => {
+  return await axios.delete(`${URL}`);
+};
+
 

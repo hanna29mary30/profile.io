@@ -7,11 +7,9 @@ h1{
 }
 input {
     font-size: 20px;
-    color: #087ef4;
     width: 80%;
     text-align: center;
     border: none;
     outline: none;
-    border-bottom: 1px solid #2c3e50;
     padding: 15px;
   }

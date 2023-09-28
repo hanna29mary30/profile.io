@@ -27,3 +27,35 @@ import Todo from "./Schema.js"
       response.status(404).json({ message: error.message });
     }
   };
+
+  export const updateTodoComp = async (request, response) => {
+    let todo = request.body;
+    console.log(request.body);
+    const completed = new Todo(request.body);
+    console.log(completed);
+    try {
+      
+      await Todo.updateOne({ _id: request.params.id }, completed);
+      response.status(201).json(completed);
+    } catch (error) {
+      response.status(409).json({ message: error.message });
+    }
+  };
+  export const remdone = async (request, response) => {
+    try {
+      await Todo.deleteOne({ _id: request.params.id });
+      response.status(201).json("User deleted Successfully");
+    } catch (error) {
+      response.status(409).json({ message: error.message });
+    }
+  };
+
+  
+  export const remall = async (request, response) => {
+    try {
+      await Todo.deleteMany();
+      response.status(201).json("User deleted Successfully");
+    } catch (error) {
+      response.status(409).json({ message: error.message });
+    }
+  };
