@@ -9,7 +9,7 @@ export const Carousels = () => {
     <div class="carousels">
     <div
       id="carouselExampleDark"
-      class="carousel carousel-dark slide"
+      className="carousel carousel-dark slide"
       data-bs-ride="carousel"
     >
       <div class="carousel-indicators">
@@ -40,13 +40,13 @@ export const Carousels = () => {
         <div class="carousel-item active">
           <img
             src={image1}
-            class="d-block w-100 h-10"
-            alt="..."
+            class="d-block w-100"
+            alt="image1"
             style={{
-              objectFit: "contain",
-              margin: "20px",
-              height: "550px",
-              width: "1000px",
+              
+              margin: "25px",
+              height: "600px",
+              width: "900px",
             }}
           />
           
@@ -54,9 +54,9 @@ export const Carousels = () => {
         <div class="carousel-item">
           <img
             src={image2}
-            class="d-block w-100 h-10"
-            alt="..."
-            style={{ objectFit: "contain", margin: "20px", height: "550px" ,width: "1000px"}}
+            class="d-block w-100"
+            alt="image2"
+            style={{ margin: "25px", height: "600px" ,width: "900px"}}
           />
           
         </div>
@@ -64,8 +64,8 @@ export const Carousels = () => {
           <img
             src={image3}
             class="d-block w-100 h-10"
-            alt="..."
-            style={{ objectFit: "contain", margin: "20px", height: "550px",width: "1000px" }}
+            alt="image2"
+            style={{ margin: "25px", height: "600px",width: "900px" }}
           />
           
         </div>
@@ -76,8 +76,8 @@ export const Carousels = () => {
         data-bs-target="#carouselExampleDark"
         data-bs-slide="prev"
       >
-        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Previous</span>
+        <span class="carousel-control-prev-icon"></span>
+        
       </button>
       <button
         class="carousel-control-next"
@@ -85,8 +85,8 @@ export const Carousels = () => {
         data-bs-target="#carouselExampleDark"
         data-bs-slide="next"
       >
-        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Next</span>
+        <span className="carousel-control-next-icon"></span>
+       
       </button>
     </div>
     <img src={profile_image} alt="Image Description" class="profile-image"></img>

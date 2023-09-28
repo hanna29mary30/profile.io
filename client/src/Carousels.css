@@ -1,5 +1,4 @@
 .carousels {
-    
     position: relative;
   }
   
@@ -9,13 +8,14 @@
     left: 200px;
     top: 100px; 
     border-radius: 115px; 
-    width: 200px; 
-    height: 200px;
+    width: 250px; 
+    height: 250px;
     box-shadow: 5px 5px 10px rgb(255, 255, 255); 
     z-index: 2; 
   }
   .heading1{
     position: absolute;
+    color: white;
     right: 275px;
     top: 200px; 
     box-shadow: 5px 5px 10px rgb(251, 249, 249); 
