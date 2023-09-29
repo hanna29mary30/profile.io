@@ -33,7 +33,6 @@ const Todo = () => {
   };
 
   const markasdone = async (id) => {
-    // Assuming `text` is your current list of todos
     const updatedTodos = text.map((todo) => {
       if (todo._id === id) {
         return { ...todo, completed: true };
