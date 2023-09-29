@@ -43,7 +43,7 @@ import Todo from "./Schema.js"
   };
   export const remdone = async (request, response) => {
     try {
-      await Todo.deleteOne({ _id: request.params.id });
+      await Todo.deleteMany({ _id: request.params.id });
       response.status(201).json("User deleted Successfully");
     } catch (error) {
       response.status(409).json({ message: error.message });
@@ -51,11 +51,4 @@ import Todo from "./Schema.js"
   };
 
   
-  export const remall = async (request, response) => {
-    try {
-      await Todo.deleteMany();
-      response.status(201).json("User deleted Successfully");
-    } catch (error) {
-      response.status(409).json({ message: error.message });
-    }
-  };
+ 

@@ -48,13 +48,16 @@ const Todo = () => {
     
   };
   const removedone = async() =>{
-    if(text.completed==true){
-      await remdone(text._id);
-    }
+    text.map(async(todo) => {
+      if (todo.completed === true) {
+        await remdone(todo._id);  };
+      })
     
   };
   const removeall = async() =>{
-    await remall();
+    text.map(async(todo) => {
+      await remdone(todo._id); 
+      })
   }
 
 

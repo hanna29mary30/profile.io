@@ -26,11 +26,10 @@ export const updateTodoCompletion = async (id, updatedtodo ) => {
   };
 
 export const remdone = async (id) => {
+  console.log("api",id)
   return await axios.delete(`${URL}/${id}`);
 };
 
-export const remall = async () => {
-  return await axios.delete(`${URL}`);
-};
+
 
 
