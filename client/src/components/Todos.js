@@ -1,16 +1,17 @@
 import "./Todo.css";
 import { useState, useEffect } from "react";
-import { addNewTodo, getTodos,updateTodoCompletion,remdone,remall} from "../api";
+import {
+  addNewTodo,
+  getTodos,
+  updateTodoCompletion,
+  remdone,
+  remall,
+} from "../api";
 
 const Todo = () => {
   const val = { data: "", completed: false };
   const [text, setTodo] = useState([]);
   const [newTodo, setNewTodo] = useState(val);
-
-  useEffect(() => {
-    getAlltodos();
-  }, []);
-
   const getAlltodos = async () => {
     try {
       let response = await getTodos();
@@ -25,11 +26,9 @@ const Todo = () => {
   };
 
   const onFormSubmit = async (e) => {
-    
-      await addNewTodo(newTodo);
-      getAlltodos();
-      setNewTodo(val);
-    
+    await addNewTodo(newTodo);
+    // getAlltodos();
+    setNewTodo(val);
   };
 
   const markasdone = async (id) => {
@@ -40,26 +39,28 @@ const Todo = () => {
         return todo;
       }
     });
-  
-    
+
     setTodo(updatedTodos);
     const todoToUpdate = updatedTodos.find((todo) => todo._id === id);
     await updateTodoCompletion(id, todoToUpdate);
-    
   };
-  const removedone = async() =>{
-    text.map(async(todo) => {
+  const removedone = async () => {
+    text.map(async (todo) => {
       if (todo.completed === true) {
-        await remdone(todo._id);  };
-      })
-    
+        await remdone(todo._id);
+      }
+    });
+    // getAlltodos();
   };
-  const removeall = async() =>{
-    text.map(async(todo) => {
-      await remdone(todo._id); 
-      })
-  }
-
+  const removeall = async () => {
+    text.map(async (todo) => {
+      await remdone(todo._id);
+    });
+    // getAlltodos();
+  };
+  useEffect(() => {
+    getAlltodos();
+  }, [removedone, removeall, onFormSubmit]);
 
   return (
     <div>
@@ -76,15 +77,23 @@ const Todo = () => {
         </form>
       </div>
       <div className="text-center">
-  <button type="button" className="btn btn-primary m-2" onClick={()=>removedone()}>
-    Remove all Done Todos
-  </button>
-  <button type="button" className="btn btn-danger m-2" onClick={()=>removeall()} >
-    Remove all Todos
-  </button>
-</div>
+        <button
+          type="button"
+          className="btn btn-primary m-2"
+          onClick={() => removedone()}
+        >
+          Remove all Done Todos
+        </button>
+        <button
+          type="button"
+          className="btn btn-danger m-2"
+          onClick={() => removeall()}
+        >
+          Remove all Todos
+        </button>
+      </div>
       <div className="row justify-content-center">
-      <table
+        <table
           className="table table-bordered table-hover table-striped text-center"
           style={{ width: "80%", margin: "0 auto" }}
         >
@@ -109,9 +118,9 @@ const Todo = () => {
                   </span>
                 </td>
                 <td>
-                  <div className="d-flex justify-content-center">
-                    <button
-                      className="btn btn-success m-2"
+                  <div className=" justify-content-center">
+                  <button
+                      className={`btn ${user.completed ? "btn-warning" : "btn-success"} m-2`}
                       onClick={() => markasdone(user._id)}
                     >
                       Mark as Done

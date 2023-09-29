@@ -5,7 +5,7 @@ const Navigation=()=> {
     <div className="mr-auto">
     <nav className="navbar navbar-expand-lg navbar-light bg-light">
   <div className="container-fluid">
-    <a className="navbar-brand" href="#">Navbar</a>
+    <a className="navbar-brand" href="#">Profile</a>
    
     <div className="collapse navbar-collapse" id="navbarNav">
       <ul className="navbar-nav">
@@ -16,7 +16,7 @@ const Navigation=()=> {
           <a className="nav-link" href="#">Blogs</a>
         </li>
         <li className="nav-item">
-          <a className="nav-link" href="#">Contact</a>
+          <a className="nav-link" href="/contact">Contact</a>
         </li>
         </ul>
     </div>
