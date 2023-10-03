@@ -1,45 +1,53 @@
-
+import React from "react";
+import contact from "./images/contact.jpg";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faEnvelope, faPhone, faAddressBook } from "@fortawesome/free-solid-svg-icons";
 
 const Contact = () => {
+  const containerStyle = {
+    backgroundImage: `url(${contact})`,
+    backgroundSize: "cover",
+    backgroundPosition: "center",
+    minHeight: "95vh",
+    position: "relative",
+    color: "#fff",
+  };
+
+  const overlayStyle = {
+    position: "absolute",
+    top: "120px",
+    left: "100px",
+    padding: "20px",
+    boxSizing: "border-box",
+    display: "flex",
+    flexDirection: "column",
+    justifyContent: "center",
+    alignItems: "flex-start",
+  };
+
+  const headingStyle = {
+    marginBottom: "60px",
+  };
+
   return (
-    <div className="container py-4 ">
-      <div className="row justify-content-center">
-        <div className="col-md-6">
-          <h2>Contact</h2>
-          <form id="contactForm">
-            <div className="mb-3">
-              <label className="form-label" htmlFor="name">
-                Name
-              </label>
-              <input className="form-control" id="name" type="text" placeholder="Name" />
-            </div>
-
-            <div className="mb-3">
-              <label className="form-label" htmlFor="emailAddress">
-                Email Address
-              </label>
-              <input className="form-control" id="emailAddress" type="email" placeholder="Email Address" />
-            </div>
-
-            <div className="mb-3">
-              <label className="form-label" htmlFor="message">
-                Message
-              </label>
-              <textarea
-                className="form-control"
-                id="message"
-                type="text"
-                placeholder="Message"
-                style={{ height: '10rem' }}
-              ></textarea>
-            </div>
-
-            <div className="d-grid">
-              <button className="btn btn-primary btn-lg" type="submit">
-                Submit
-              </button>
-            </div>
-          </form>
+    <div className="container-fluid p-0" style={containerStyle}>
+      <div className="row">
+        <div className="col-md-6" style={overlayStyle}>
+          <h1 style={headingStyle}>Contact Information</h1>
+          <div className="p-8">
+            <h3>
+              <FontAwesomeIcon icon={faEnvelope} />  Email:{" "}
+              <a href="mailto:example@example.com">example@example.com</a>
+            </h3>
+            <h3>
+              <FontAwesomeIcon icon={faPhone} />  Phone:{" "}
+              <a href="tel:+123456789">+123456789</a>
+            </h3>
+            <h3>
+              <FontAwesomeIcon icon={faAddressBook} />  Address: xyz, City,
+              Country
+            </h3>
+          </div>
         </div>
       </div>
     </div>

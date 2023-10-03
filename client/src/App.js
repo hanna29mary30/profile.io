@@ -5,6 +5,9 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Todo from './components/Todos';
 import Contact from "./Contact";
+import Projects from './Projects';
+import Login from './Login';
+import User from "./User";
 function App() {
   return (
     <BrowserRouter>
@@ -12,8 +15,10 @@ function App() {
       <Routes>
         <Route path="/" element={<Profile />} />
         <Route path="/todo" element={<Todo />} />
+        <Route path="/projects" element={<Projects />} />
         <Route path="/contact" element={<Contact />} />
-        
+        <Route path="/login" element={<Login />} />
+        <Route path="/user" element={<User />} />
       </Routes>
     </BrowserRouter>
   );
