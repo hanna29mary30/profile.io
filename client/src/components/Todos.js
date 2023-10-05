@@ -2,6 +2,7 @@ import "./Todo.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPlus, faTrash, faTimes } from "@fortawesome/free-solid-svg-icons";
 import { useState, useEffect } from "react";
+import todopic from "../images/todo.png"
 import {
   addNewTodo,
   getTodos,
@@ -83,6 +84,7 @@ const Todo = () => {
 
   return (
     <div>
+      <div className="todo-wrapper" style={{ backgroundImage: `url(${todopic}),`}}>
       <section className="vh-100">
         <div className="container py-5 h-80 ">
           <div className="row d-flex justify-content-center align-items-center h-100">
@@ -230,6 +232,7 @@ const Todo = () => {
           </div>
         </div>
       </section>
+      </div>
     </div>
   );
 };

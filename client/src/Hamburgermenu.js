@@ -87,6 +87,7 @@ const Menu = ({ open }) => {
     <StyledMenu open={open}>
       <a href="/">Profile</a>
       <a href="/todo">Todo App</a>
+      <a href="/search">News app</a>
     </StyledMenu>
   );
 };

@@ -8,6 +8,7 @@ import Contact from "./Contact";
 import Projects from './Projects';
 import Login from './Login';
 import User from "./User";
+import Newsapp from './Newsapp';
 function App() {
   return (
     <BrowserRouter>
@@ -19,6 +20,7 @@ function App() {
         <Route path="/contact" element={<Contact />} />
         <Route path="/login" element={<Login />} />
         <Route path="/user" element={<User />} />
+        <Route path="/search" element={<Newsapp />} />
       </Routes>
     </BrowserRouter>
   );
