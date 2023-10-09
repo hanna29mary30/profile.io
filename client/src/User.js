@@ -7,10 +7,6 @@ import { faUser } from '@fortawesome/free-solid-svg-icons';
 const User = () => {
   const { user, isAuthenticated, isLoading } = useAuth0();
 
-  if (isLoading) {
-    return <div>Loading...</div>;
-  }
-
   return (
     isAuthenticated && ( 
       <div>
