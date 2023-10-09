@@ -11,6 +11,19 @@ const imageStyle = {
   objectFit: "cover",
 };
 
+const projectsData = [
+  {
+    title: "Multiple Image Steganography using deep Neural Network",
+    description: "Multiple Image Steganography using deep Neural Network",
+    image: post1,
+  },
+  {
+    title: "Collaborative Filtering Movie Recommendation",
+    description: "Collaborative Filtering Movie Recommendation using Machine Learning Algorithm, KNN etc..",
+    image: post2,
+  },
+];
+
 const Projects = () => {
   return (
     <div>
@@ -21,52 +34,23 @@ const Projects = () => {
         <div className="container">
           <section className="text-center">
             <div className="row">
-              <div className="col-lg-4 col-md-12 mb-4">
-                <div className="card border-dark" style={cardStyle}>
-                  <div>
-                    <img src={post1} style={imageStyle} />
-
-                    <div
-                      style={{ backgroundColor: "rgba(251, 251, 251, 0.15)" }}
-                      className="mask"
-                    ></div>
-                  </div>
-                  <div className="card-body">
-                    <h5 className="card-title">
-                      Multiple Image Steganography using deep Neural Network
-                    </h5>
-                    <p className="card-text">
-                      Multiple Image Steganography using deep Neural Network
-                    </p>
-                  </div>
-                </div>
-              </div>
-
-              <div className="col-lg-4 col-md-12 mb-4">
-                <div className="card border-dark" style={cardStyle}>
-                  <div
-                    className="bg-image hover-overlay ripple"
-                    data-mdb-ripple-color="light"
-                  >
-                    <img src={post2} style={imageStyle} />
-                    <a href="#!">
+              {projectsData.map((project, index) => (
+                <div className="col-lg-4 col-md-12 mb-4" key={index}>
+                  <div className="card border-dark" style={cardStyle}>
+                    <div>
+                      <img src={project.image} style={imageStyle} />
                       <div
                         style={{ backgroundColor: "rgba(251, 251, 251, 0.15)" }}
                         className="mask"
                       ></div>
-                    </a>
-                  </div>
-                  <div className="card-body">
-                    <h5 className="card-title">
-                      Collaborative Filtering Movie Recommendation
-                    </h5>
-                    <p className="card-text">
-                      Collaborative Filtering Movie Recommendation using Machine
-                      Learning Algorithm ,KNN etc..
-                    </p>
+                    </div>
+                    <div className="card-body">
+                      <h5 className="card-title">{project.title}</h5>
+                      <p className="card-text">{project.description}</p>
+                    </div>
                   </div>
                 </div>
-              </div>
+              ))}
             </div>
           </section>
         </div>

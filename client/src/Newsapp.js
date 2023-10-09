@@ -14,7 +14,7 @@ const Newsapp = () => {
           onCommand :({command , articles,number}) =>{
             if(command == 'newsHeadlines'){
                 setNewsArticles(articles);
-                console.log(articles);
+                
             }else if(command == 'highlight'){
                 setActiveArticle((prevActiveArticle) => prevActiveArticle + 1);
             } else if (command === 'open') {
