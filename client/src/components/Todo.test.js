@@ -1,10 +1,6 @@
 import React from 'react';
 import { render, screen, fireEvent, waitFor } from '@testing-library/react';
 import Todo from './Todos.js';
-
-
-
-
 describe('Todo Component', () => {
   
 
