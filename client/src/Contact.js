@@ -1,7 +1,17 @@
 import React from "react";
 import contact from "./images/contact.jpg";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faEnvelope, faPhone, faAddressBook } from "@fortawesome/free-solid-svg-icons";
+import {
+  faEnvelope,
+  faPhone,
+  faAddressBook,
+} from "@fortawesome/free-solid-svg-icons";
+
+import {
+  faInstagram,
+  faFacebook,
+  faTwitter,
+} from "@fortawesome/free-brands-svg-icons"; 
 
 const Contact = () => {
   const containerStyle = {
@@ -29,6 +39,18 @@ const Contact = () => {
     marginBottom: "60px",
   };
 
+  const socialMediaStyle = {
+    marginTop: "20px",
+  };
+
+  const iconStyle = {
+    fontSize: "40px",
+    color: "#fff",  
+    marginRight: "20px", 
+    marginTop:"10px"
+    
+  };
+
   return (
     <div className="container-fluid p-0" style={containerStyle}>
       <div className="row">
@@ -36,17 +58,40 @@ const Contact = () => {
           <h1 style={headingStyle}>Contact Information</h1>
           <div className="p-8">
             <h3>
-              <FontAwesomeIcon icon={faEnvelope} />  Email:{" "}
+              <FontAwesomeIcon icon={faEnvelope} style={iconStyle} /> Email:{" "}
               <a href="mailto:example@example.com">example@example.com</a>
             </h3>
             <h3>
-              <FontAwesomeIcon icon={faPhone} />  Phone:{" "}
+              <FontAwesomeIcon icon={faPhone} style={iconStyle} /> Phone:{" "}
               <a href="tel:+123456789">+123456789</a>
             </h3>
             <h3>
-              <FontAwesomeIcon icon={faAddressBook} />  Address: xyz, City,
+              <FontAwesomeIcon icon={faAddressBook} style={iconStyle} /> Address: xyz, City,
               Country
             </h3>
+            <div style={socialMediaStyle}>
+              <a
+                href="https://www.instagram.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <FontAwesomeIcon icon={faInstagram} style={iconStyle} />
+              </a>{" "}
+              <a
+                href="https://www.facebook.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <FontAwesomeIcon icon={faFacebook} style={iconStyle} />
+              </a>{" "}
+              <a
+                href="https://twitter.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <FontAwesomeIcon icon={faTwitter} style={iconStyle} />
+              </a>{" "}
+            </div>
           </div>
         </div>
       </div>

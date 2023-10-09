@@ -22,6 +22,11 @@ const projectsData = [
     description: "Collaborative Filtering Movie Recommendation using Machine Learning Algorithm, KNN etc..",
     image: post2,
   },
+  {
+    title: "Collaborative Filtering Movie Recommendation",
+    description: "Collaborative Filtering Movie Recommendation using Machine Learning Algorithm, KNN etc..",
+    image: post2,
+  },
 ];
 
 const Projects = () => {
